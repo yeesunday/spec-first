@@ -1,0 +1,22 @@
+spec_root: spec/
+roles:
+  product:
+    always: [project, product]
+  frontend:
+    always: [product, design, architecture, api, test]
+  backend:
+    always: [product, architecture, api, domain, test]
+  qa:
+    always: [product, design, api, test]
+  architect:
+    always: [project, product, architecture, api, domain]
+mappings:
+  - paths: ["src/ui/**"]
+    role: frontend
+    specs: [REQ-due-date, DES-due-date, ARCH-due-date, API-due-date, TEST-due-date]
+  - paths: ["src/domain/**"]
+    role: backend
+    specs: [REQ-due-date, ARCH-due-date, API-due-date, DOM-due-date, TEST-due-date]
+  - paths: ["test/**"]
+    role: qa
+    specs: [REQ-due-date, DES-due-date, API-due-date, TEST-due-date]

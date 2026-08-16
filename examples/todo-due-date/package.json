@@ -1,0 +1,8 @@
+{
+  "name": "spec-first-todo-due-date-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test && node ../../tools/validate.mjs ."
+  }
+}

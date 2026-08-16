@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-first.dev/schema/spec-contract.schema.json",
+  "title": "SpecFirst Spec Contract",
+  "description": "所有分层 Spec README.md 的共同元数据。专业正文保留原生格式。",
+  "type": "object",
+  "required": ["spec"],
+  "additionalProperties": false,
+  "properties": {
+    "spec": {
+      "type": "object",
+      "required": ["id", "type", "version", "status", "owner"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Z]{2,6}-[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["project", "product", "design", "architecture", "api", "domain", "test"]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "review", "approved", "deprecated"]
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2,6}-[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifacts": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "updated": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# 角色默认清单 + 代码路径 → Spec 映射（docs/agent.md）
+spec_root: spec/
+
+roles:
+  # always 用类型名：该角色任何时候都读
+  product:
+    always: [project, product]
+  frontend:
+    always: [product, design, api, test]
+  backend:
+    always: [product, architecture, api, domain, test]
+  qa:
+    always: [product, design, api, test]
+
+mappings:
+  # specs 用真实 Spec ID：动这些路径时具体读哪几份
+  - paths: ["src/example/**"]
+    role: frontend
+    specs: [REQ-example, DES-example, API-example, TEST-example]
