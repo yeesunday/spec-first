@@ -34,6 +34,24 @@ spec/{project,product,design,architecture,api,domain,test}/<SPEC-ID>/
 - 项目状态（目标/里程碑/风险）用 Markdown 表格维护在 `PROJ-*` 的 README 里，PM 直接改表；
 - 执行任务留在 Jira / Linear / GitHub Issues 等已有工具，Spec 和 Issue 用需求 ID 互相对照。
 
+## 提交信息
+
+格式：`<type>(<scope>): <一句话说明>`
+
+- `type`：`feat` 新功能 / `fix` 修复 / `docs` 文档 / `refactor` 重构 / `test` 测试 / `chore` 杂项
+- `scope`：优先用 Spec ID（`REQ-due-date`、`API-due-date`）或目录名（`templates`、`tools`、`docs`）；改动跨多范围时可省略
+- 说明：动词开头，一句话说清做了什么；涉及 Spec 变更的必须带 spec id
+- 一个提交只做一件事，不"顺手改"
+
+示例：
+
+```text
+feat(REQ-due-date): 实现标题自动识别 R6~R8
+fix(API-due-date): 修正 dueDate 为 null 时的校验
+docs(workflow): 补充运行期反馈闭环
+chore(tools): 校验器只收集 x-requirements 引用
+```
+
 ## 禁止事项
 
 - ❌ 把接口字段抄进需求文档（写 `REQ-xxx#R1` 引用即可）；

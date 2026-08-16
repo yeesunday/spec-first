@@ -60,7 +60,7 @@ Change 是评审说明，不是另一份 Spec 真相——Git 分支和 PR diff 
 3. **Engineering**：代码和测试与契约一致吗？
 4. **QA/PM**：兼容性、迁移、发布风险有未决项吗？
 
-合并后，PR 里的 Spec 就是新的当前约定；实现与否由测试、CI 和发布记录证明。
+合并后，PR 里的 Spec 就是新的当前约定；实现与否由测试、CI 和发布记录证明。提交信息按 `CONVENTIONS.md` 的格式写（`type(scope): 说明`，涉及 Spec 变更必须带 spec id）。
 
 ## 合并之后：闭环
 
