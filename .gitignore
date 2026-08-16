@@ -1,6 +1,7 @@
-# tmp/ 是临时目录：参考项目克隆、实验内容等任意东西都放这里，全部不入库
-tmp/*
-!tmp/README.md
+.cursorrules
+
+# 本地临时目录
+tmp/
 
 # 示例不提交包管理器生成物
 node_modules/

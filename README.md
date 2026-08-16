@@ -46,7 +46,6 @@ templates/         团队默认模板：CONVENTIONS + 7 类 Spec + Change 提案
 schema/            Spec frontmatter 的 JSON Schema（机器校验的依据）
 tools/validate.mjs 零依赖校验器：目录、元数据、引用、链接、OpenAPI 回链
 examples/          可运行示例：todo 截止日期（npm test 全绿）
-tmp/               临时目录：参考项目克隆等，不入库
 ```
 
 ---
